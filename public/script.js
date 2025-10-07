@@ -1,6 +1,6 @@
 const API_URL = '/api/games';
 
-// --- ADD / CREATE ---
+// ADD / CREATE
 async function defaultSubmitHandler(e) {
   e.preventDefault();
 
@@ -27,7 +27,7 @@ async function defaultSubmitHandler(e) {
   }
 }
 
-// --- READ / LOAD ---
+// READ / LOAD
 async function loadGames() {
   const res = await fetch(API_URL);
   const games = await res.json();
@@ -72,7 +72,7 @@ async function showNotes(id) {
 }
 
 
-// --- UPDATE ---
+// EDIT / UPDATE
 async function editGame(id) {
   const res = await fetch(API_URL);
   const games = await res.json();
@@ -124,7 +124,7 @@ async function editGame(id) {
   };
 }
 
-// --- DELETE ---
+// DELETE 
 async function deleteGame(id) {
   if (confirm('Delete this game?')) {
     const res = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
@@ -132,7 +132,7 @@ async function deleteGame(id) {
   }
 }
 
-// --- INITIALIZE ---
+// INITIALIZE
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('game-form');
   form.addEventListener('submit', defaultSubmitHandler);
