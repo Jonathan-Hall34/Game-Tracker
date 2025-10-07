@@ -19,7 +19,7 @@ let db;
 export async function connectToDB() {
   try {
     await client.connect();
-    db = client.db("game-tracker"); // name your DB
+    db = client.db("game-tracker");
     console.log("✅ Connected to MongoDB");
   } catch (err) {
     console.error("❌ DB connection failed", err);
