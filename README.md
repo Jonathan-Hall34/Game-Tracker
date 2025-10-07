@@ -1,4 +1,4 @@
-🎮 Video Game Tracker
+🎮 Video Game Tracker<br>
 Full-Stack CRUD App built with Node.js, Express, and MongoDB
 
 ---
@@ -20,7 +20,7 @@ It allows users to:
 ---
 🧑🏻‍💻 Author
 
-Name: Jonathan Hall
+Name: Jonathan Hall<br>
 Course: CIS 486
 
 ---
@@ -37,7 +37,7 @@ Course: CIS 486
 ---
 🌎 Deployment
 
-The live app is hosted on Render.
+The live app is hosted on Render.<br>
 Visit https://game-tracker-a8ck.onrender.com
 
 ---
