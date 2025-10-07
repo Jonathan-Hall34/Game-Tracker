@@ -41,7 +41,7 @@ The live app is hosted on Render.<br>
 Visit https://game-tracker-a8ck.onrender.com
 
 ---
-🧩 Project Summary
+🔑 Project Summary
 
 This project demonstrates:
 
