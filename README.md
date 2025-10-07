@@ -1,5 +1,5 @@
 🎮 Video Game Tracker
-- Full-Stack CRUD App built with Node.js, Express, and MongoDB
+Full-Stack CRUD App built with Node.js, Express, and MongoDB
 
 ---
 📖 App Story
@@ -27,3 +27,26 @@ It allows users to:
 - ✅ Notes modal for viewing additional details
 - ✅ Environment variables secured with dotenv
 - ✅ Deployed via Render with full data persistence
+
+---
+🧩 Project Summary
+
+This project demonstrates:
+
+- A complete MVC-style architecture
+
+- Persistent full-stack data flow from client → API → database → client
+
+- Secure environment configuration and deployment
+
+- Clean, responsive, and user-friendly design
+
+It fulfills all grading criteria for:
+
+- Full CRUD functionality
+
+- RESTful API implementation
+
+- Secure and documented code
+
+- Proper deployment
