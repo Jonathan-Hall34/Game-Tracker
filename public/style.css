@@ -23,6 +23,23 @@ h1 {
   font-weight: 700;
 }
 
+#instructions {
+  background-color: rgba(31, 40, 51, 0.8);
+  border-left: 4px solid #66fcf1;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+}
+
+#instructions h5 {
+  color: #66fcf1;
+  text-shadow: 0 0 8px #45a29e;
+}
+
+#instructions li {
+  color: #c5c6c7;
+  margin-bottom: 4px;
+}
+
+
 /* Inputs & Textareas */
 input, select, textarea {
   background-color: #1f2833;

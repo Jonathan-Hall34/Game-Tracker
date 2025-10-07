@@ -1,90 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Tracker</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-dark text-light">
 
-  <div class="container py-5">
-    <h1 class="mb-4 text-center">🎮 Video Game Tracker</h1>
+    <div class="container py-5">
+        <h1 class="mb-4 text-center">🎮 Video Game Tracker</h1>
 
-    <!-- Add New Game Form -->
-    <form id="game-form" class="row g-3 mb-5">
-      <div class="col-md-6">
-        <input type="text" class="form-control" id="title" placeholder="Game Title" required>
-      </div>
-      <div class="col-md-6">
-        <input type="text" class="form-control" id="platform" placeholder="Platform">
-      </div>
-      <div class="col-md-4">
-        <input type="text" class="form-control" id="genre" placeholder="Genre">
-      </div>
-      <div class="col-md-4">
-        <select class="form-select" id="status">
-          <option value="Backlog">Backlog</option>
-          <option value="Playing">Playing</option>
-          <option value="Completed">Completed</option>
-        </select>
-      </div>
-      <div class="col-md-4">
-        <input type="number" class="form-control" id="rating" placeholder="Rating (0-10)" min="0" max="10">
-      </div>
-      <div class="col-12">
-        <textarea class="form-control" id="notes" placeholder="Notes..." rows="2"></textarea>
-      </div>
-      <div class="col-12 text-end">
-        <button type="submit" class="btn btn-primary">Add Game</button>
-      </div>
-    </form>
+        <!-- Info Card / Instructions -->
+        <div class="alert alert-dark border border-info mt-3" role="alert" id="instructions">
+            <h5 class="text-info"><i class="bi bi-controller"></i> How to Use Game Tracker</h5>
+            <ul class="mb-0">
+                <li>Add a new game by entering its details in the form below and clicking <strong>Add Game</strong>.
+                </li>
+                <li>View notes for any game by clicking the <strong>Notes</strong> button.</li>
+                <li>Update a game’s info with the <strong>Edit</strong> button.</li>
+                <li>Remove a game with the <strong>Delete</strong> button.</li>
+                <li>All your games are stored persistently in MongoDB — reload anytime!</li>
+            </ul>
+        </div>
 
-    <!-- Games Table -->
-    <table class="table table-dark table-hover">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Platform</th>
-          <th>Status</th>
-          <th>Rating</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="games-table-body">
-        <!-- Games will be inserted here -->
-      </tbody>
-    </table>
-  </div>
 
-  <!-- Notes Modal -->
-<div class="modal fade" id="notesModal" tabindex="-1" aria-labelledby="notesModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-light border border-info">
-      <div class="modal-header border-info">
-        <h5 class="modal-title" id="notesModalLabel">Game Notes</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="notesModalBody">
-        <!-- Notes text goes here -->
-      </div>
-      <div class="modal-footer border-info">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+        <!-- Add New Game Form -->
+        <form id="game-form" class="row g-3 mb-5">
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="title" placeholder="Game Title" required>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="platform" placeholder="Platform">
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" id="genre" placeholder="Genre">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="status">
+                    <option value="Backlog">Backlog</option>
+                    <option value="Playing">Playing</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" id="rating" placeholder="Rating (0-10)" min="0" max="10">
+            </div>
+            <div class="col-12">
+                <textarea class="form-control" id="notes" placeholder="Notes..." rows="2"></textarea>
+            </div>
+            <div class="col-12 text-end">
+                <button type="submit" class="btn btn-primary">Add Game</button>
+            </div>
+        </form>
+
+        <!-- Games Table -->
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Platform</th>
+                    <th>Status</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="games-table-body">
+            </tbody>
+        </table>
     </div>
-  </div>
-</div>
+
+    <!-- Notes Modal -->
+    <div class="modal fade" id="notesModal" tabindex="-1" aria-labelledby="notesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light border border-info">
+                <div class="modal-header border-info">
+                    <h5 class="modal-title" id="notesModalLabel">Game Notes</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="notesModalBody">
+                </div>
+
+                <div class="modal-footer border-info">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<footer>
-  <p>| Powered by Node.js, Express.js & MongoDB |</p>
-</footer>
+    <footer>
+        <p>| Powered by Node.js, Express.js & MongoDB |</p>
+    </footer>
 
 </body>
+
 </html>
