@@ -18,6 +18,12 @@ It allows users to:
 - View notes about each game 💾
 
 ---
+🧑🏻‍💻 Author
+
+Name: Jonathan Hall
+Course: CIS 486
+
+---
 🧠 Features
 
 - ✅ Full CRUD Functionality (Create, Read, Update, Delete)
@@ -27,6 +33,12 @@ It allows users to:
 - ✅ Notes modal for viewing additional details
 - ✅ Environment variables secured with dotenv
 - ✅ Deployed via Render with full data persistence
+
+---
+🌎 Deployment
+
+The live app is hosted on Render.
+Visit https://game-tracker-a8ck.onrender.com
 
 ---
 🧩 Project Summary
