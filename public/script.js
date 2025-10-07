@@ -43,6 +43,7 @@ async function loadGames() {
       <td>${game.status}</td>
       <td>${game.rating ?? '-'}</td>
       <td>
+        <button class="btn btn-sm btn-info" onclick="showNotes('${game._id}')">Notes</button>
         <button class="btn btn-sm btn-warning" onclick="editGame('${game._id}')">Edit</button>
         <button class="btn btn-sm btn-danger" onclick="deleteGame('${game._id}')">Delete</button>
       </td>
@@ -50,6 +51,26 @@ async function loadGames() {
     tbody.appendChild(row);
   });
 }
+
+async function showNotes(id) {
+  const res = await fetch(API_URL);
+  const games = await res.json();
+  const game = games.find(g => g._id === id);
+
+  if (!game) return alert('Game not found.');
+
+  const notesBody = document.getElementById('notesModalBody');
+  notesBody.textContent = game.notes && game.notes.trim() !== ''
+    ? game.notes
+    : 'No notes available for this game.';
+
+  const modalTitle = document.getElementById('notesModalLabel');
+  modalTitle.textContent = `${game.title} — Notes`;
+
+  const modal = new bootstrap.Modal(document.getElementById('notesModal'));
+  modal.show();
+}
+
 
 // --- UPDATE ---
 async function editGame(id) {

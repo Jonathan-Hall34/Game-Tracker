@@ -76,6 +76,19 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 12px #ff4d4d, 0 0 24px #ff6b6b;
 }
 
+.btn-info {
+  background-color: #00e0ff;
+  border: none;
+  color: #0b0c10;
+}
+
+.btn-info:hover {
+  background-color: #00e0ff;
+  box-shadow: 0 0 12px #00e0ff, 0 0 24px #00e0ff;
+  color: #0b0c10;
+}
+
+
 /* Table */
 .table {
   color: #c5c6c7;
