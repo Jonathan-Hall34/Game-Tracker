@@ -16,14 +16,26 @@ router.post('/', async (req, res) => {
   res.status(201).json(result);
 });
 
-// PUT update game
+// UPDATE a game by ID
 router.put('/:id', async (req, res) => {
-  const id = req.params.id;
-  const result = await getDB().collection('games').updateOne(
-    { _id: new ObjectId(id) },
-    { $set: req.body }
-  );
-  res.json(result);
+  try {
+    const id = req.params.id;
+    const updates = req.body;
+
+    const result = await getDB().collection('games').updateOne(
+      { _id: new ObjectId(id) },
+      { $set: updates }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: 'Game not found' });
+    }
+
+    res.json({ message: 'Game updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error updating game' });
+  }
 });
 
 // DELETE game
