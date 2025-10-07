@@ -1,5 +1,5 @@
 🎮 Video Game Tracker
-Full-Stack CRUD App built with Node.js, Express, and MongoDB
+- Full-Stack CRUD App built with Node.js, Express, and MongoDB
 
 ---
 📖 App Story
@@ -20,10 +20,10 @@ It allows users to:
 ---
 🧠 Features
 
-✅ Full CRUD Functionality (Create, Read, Update, Delete)
-✅ RESTful API built with Express.js
-✅ Persistent data with MongoDB Atlas
-✅ Responsive UI built with Bootstrap 5 + custom neon gamer theme
-✅ Notes modal for viewing additional details
-✅ Environment variables secured with dotenv
-✅ Deployed via Render with full data persistence
+- ✅ Full CRUD Functionality (Create, Read, Update, Delete)
+- ✅ RESTful API built with Express.js
+- ✅ Persistent data with MongoDB Atlas
+- ✅ Responsive UI built with Bootstrap 5 + custom neon gamer theme
+- ✅ Notes modal for viewing additional details
+- ✅ Environment variables secured with dotenv
+- ✅ Deployed via Render with full data persistence
