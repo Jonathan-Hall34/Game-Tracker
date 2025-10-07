@@ -2,6 +2,7 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
 
 dotenv.config();
+//console.log('[DEBUG] MONGO_URI exists:', !!process.env.MONGO_URI, 'len:', process.env.MONGO_URI?.length);
 
 const uri = process.env.MONGO_URI;
 

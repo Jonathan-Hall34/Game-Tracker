@@ -1,0 +1,58 @@
+/* Custom styles for Game Tracker */
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+  color: #00ffc8;
+}
+
+input, select, textarea {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+input:focus, select:focus, textarea:focus {
+  background-color: #222;
+  border-color: #00ffc8;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #00ffc8;
+  border: none;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: #00cfa3;
+  color: #000;
+}
+
+.btn-danger {
+  background-color: #ff4d4d;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #e60000;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+td, th {
+  vertical-align: middle !important;
+}
+
+/* Add spacing below the table */
+table + * {
+  margin-top: 30px;
+}
